@@ -1,9 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './elements/Header';
+import Home from './components/Home';
+import Footer from './elements/Footer';
 
 function App() {
+  const timeDate = new Date(2024, 3, 25);
+  const title = "Book";
+  const price = 200
+
   return (
-    <h1>Hello</h1>
+    <>
+      <Header></Header>
+      <Home
+        date={timeDate}
+        title={title}
+        amount={price}
+      >
+      </Home>
+      <Footer></Footer>
+    </>
   );
 }
 

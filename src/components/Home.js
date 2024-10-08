@@ -1,8 +1,22 @@
 import '../index.css'
-function Home() {
+function Home(props) {
+
+    const month = props.date.toLocaleString('en-US',{month:'long'})
+    const date = props.date.toLocaleString('en-US',{date:'long'})
+
     return (
         <div>
-            <h1> Home Components</h1>
+            <div className='flex gap-9 font-bold text-3xl justify-center bg-green-400'>
+                <div>
+                    Created At: <span className='bg-red-500'>{month}</span> 
+                </div>
+                <div>
+                    ITEM NAME: <span className='bg-red-500'>{props.title}</span> 
+                </div>
+                <div>
+                    AMOUNT: <span className='bg-red-500'>{props.amount}</span>
+                </div>
+            </div>
         </div>
     );
 
