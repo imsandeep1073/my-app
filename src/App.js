@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import Page from './components/Page';
 
+import Counter from './components/Counter';
 
 function App() {
   const myArr = [
@@ -64,6 +65,9 @@ function App() {
         title={myArr[4].title}
         amount={myArr[4].price}
       />
+
+
+      <Counter/>
     </>
   );
 }

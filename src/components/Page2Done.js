@@ -3,22 +3,29 @@ import React, { useState } from 'react';
 import ExpenseDate from "./ExpenseDate"
 
 const Page = (props) => {
-  
+    const [newTitle, setNewTitle] = useState("");
+    const [title, setTitle] = useState(props.title);
+    // change title on click
+    const clickHendler = () => {
+        setTitle(newTitle)
+    }
+
+    function changeHendler(event) {
+        setNewTitle(event.target.value);
+    }
+
+
     return (
         <div className="flex gap-5 p-3">
-            <h2 className="bg-red-500">{props.title}</h2>
+            <h2 className="bg-red-500">{title}</h2>
             <p className="bg-green-500">{props.amount}</p>
             <p className="bg-blue-600">
                 <ExpenseDate date={props.date} />
             </p>
             <div>
-                <button className='border rounded-xl ps-2  pe-2 bg-red-500 shadow' > Add Title</button>
-                
-            </div>
-            {/* <div>
                 <input type="text" className='border' value={newTitle} onChange={changeHendler} />
                 <button className='bg-red-600 ' onClick={clickHendler}>Change Title</button>
-            </div> */}
+            </div>
         </div>
     )
 
